@@ -1,0 +1,6 @@
+# The first non commented line should be the name of the controller button
+# used to cycle action sets. Subsequent lines should be the action set names.
+# Empty lines and lines preceded by '#' will be ignored
+BACK
+Default
+Prompt Swap

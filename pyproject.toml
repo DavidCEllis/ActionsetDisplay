@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="steam_actionset_display"
+description="Backup display for steam controller action sets as they keep breaking"
+authors = [
+  { name="David C Ellis" },
+]
+readme="README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+]
+
+dependencies = [
+    "pyttsx3",  # TTS
+    "psutil",  # Detecting if the game is running.
+    "XInput-Python",  # Handle Gamepad Input
+    "plyer",  # Windows notifications
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
