@@ -11,7 +11,10 @@ Hopefully it will be fixed but this is not the first time these have been broken
 
 ## How to use ##
 
-**CURRENTLY THIS DOES NOT WORK FOR DUALSHOCK CONTROLLERS**
+**IN ORDER TO USE THIS WITH A DUALSHOCK CONTROLLER YOU WILL NEED DS4Windows**
+In this case if you're using steam to handle the DS4 controller you want to hide
+the emulated XBox controller from applications using HidHide. Add ActionsetDisplay.exe
+to the applications that can 'look through' this 'cloak'.
 
 Make sure your controller is connected.
 Modify config.toml to match your game settings and notification preferences.
