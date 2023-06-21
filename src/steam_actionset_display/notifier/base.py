@@ -2,9 +2,15 @@ from abc import ABC, abstractmethod
 
 
 class BaseNotifier(ABC):
-    FRONTEND_NAME = ""  # Name in the config file
+    """
+    Base class for all notifiers
 
-    registry = {}
+    This is used to find notifiers via __subclasses__
+
+    Module detection is based on the config.toml
+    Notifier detection is then based around subclassing this.
+    """
+    FRONTEND_NAME = ""  # Name in the config file
 
     def __init__(self, *, settings: dict):
         try:
