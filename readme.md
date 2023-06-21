@@ -43,5 +43,5 @@ Add `use_frontend = true` for it to be used automatically.
 
 * Controller Inputs: [XInput-Python](https://github.com/Zuzu-Typ/XInput-Python)
 * TTS: [pyttsx3](https://github.com/nateshmbhat/pyttsx3)
-* Windows Notifications: [plyer](https://github.com/kivy/plyer)
+* Windows Notifications: [windows-toasts](https://github.com/DatGuy1/Windows-Toasts)
 * Process Detection: [psutil](https://github.com/giampaolo/psutil)
