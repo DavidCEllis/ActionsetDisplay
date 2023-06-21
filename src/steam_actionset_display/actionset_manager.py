@@ -113,6 +113,3 @@ def run_application(config_path):
     finally:
         gamepad_thread.stop()
 
-
-if __name__ == "__main__":
-    run_application()
