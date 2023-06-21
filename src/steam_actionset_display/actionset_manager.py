@@ -21,6 +21,10 @@ def make_callback(
         game_detector: ProcessRunningCheck,
         actionset_list: list[str],
 ):
+    """
+    Get a function that will announce the current actionset to all notifiers
+    if the game is running and reset the list if not.
+    """
     actionset_loop = itertools.cycle(actionset_list)
     _ = next(actionset_loop)  # Skip the first value as that is the initial setting
 
@@ -58,6 +62,7 @@ def run_application(config_path):
 
     controller_id = controllers.index(True)
 
+    # Read the config and get useful settings
     config_data = tomllib.loads(config_path.read_text())
 
     keypress_name = config_data["keypress"]
