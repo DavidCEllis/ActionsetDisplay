@@ -37,13 +37,13 @@ def copy_extras():
     dest_folder = project_folder / "app" / "dist"
 
     shutil.copy(config_file, dest_folder)
-    shutil.copy(readme_file, dest_folder)
+    shutil.copyfile(readme_file, dest_folder / "readme.txt")
 
 
 def build_app():
     pyinstaller_args = [
         "app.py",
-        "--name ActionsetDisplay",
+        "-nActionsetDisplay",
         "--onefile",
         f"--add-data={icon_file};.",
         f"--icon={icon_file}"
