@@ -25,7 +25,7 @@ dependencies = [
     "pyttsx3",  # TTS
     "psutil",  # Detecting if the game is running.
     "XInput-Python",  # Handle Gamepad Input
-    "plyer",  # Windows notifications
+    "windows-toast",  # Windows Notifications
 ]
 
 [tool.setuptools]

@@ -1,54 +1,29 @@
-"""
-Windows notification output mode using plyer
-"""
+from windows_toasts import (
+    WindowsToaster,
+    ToastImageAndText2,
+    ToastDisplayImage,
+    ToastDuration,
+)
 
-import plyer
 from .base import BaseNotifier
 from ..data import icon_file
-
-APP_NAME = "ActionSet Display"
-APP_ICON = icon_file
 
 
 class ToastNotifier(BaseNotifier):
     FRONTEND_NAME = "toast"
 
+    def __init__(self, *, settings):
+        super().__init__(settings=settings)
+        self.toaster = WindowsToaster(self.settings["title"])
+
+        self.image = ToastDisplayImage.fromPath(icon_file, circleCrop=False)
+
+        self.toast = ToastImageAndText2()
+        self.toast.SetSuppressPopup(False)
+        self.toast.SetDuration(ToastDuration.Short)
+        self.toast.AddImage(self.image)
+        self.toast.SetHeadline(self.settings["header"])
+
     def display(self, message):
-        plyer.notification.notify(
-            title=self.settings['title'],
-            message=message,
-            app_name=APP_NAME,
-            app_icon=str(icon_file)
-        )
-
-
-def main():
-    import time
-    plyer.notification.notify(
-        title="Test Title",
-        message="Test Message",
-        app_name=APP_NAME,
-        app_icon=str(icon_file),
-    )
-
-    time.sleep(1)
-
-    plyer.notification.notify(
-        title="Test Title",
-        message="Test Message 2",
-        app_name=APP_NAME,
-        app_icon=str(icon_file),
-    )
-
-    time.sleep(1)
-
-    plyer.notification.notify(
-        title="Test Title",
-        message="Test Message 3",
-        app_name=APP_NAME,
-        app_icon=str(icon_file),
-    )
-
-
-if __name__ == "__main__":
-    main()
+        self.toast.SetFirstLine(message)
+        self.toaster.show_toast(self.toast)
