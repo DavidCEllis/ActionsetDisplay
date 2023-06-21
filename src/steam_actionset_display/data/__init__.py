@@ -3,9 +3,9 @@ from pathlib import Path
 
 __all__ = ["icon_file"]
 
-if getattr(sys, "frozen", False):
-    base_path = Path(sys.executable).parent
-else:
+try:
+    base_path = Path(getattr(sys, "_MEIPASS"))  # pyinstaller folder
+except AttributeError:
     base_path = Path(__file__).parent
 
 icon_file = base_path / "game-controller.ico"
