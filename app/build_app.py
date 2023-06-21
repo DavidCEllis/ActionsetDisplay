@@ -43,6 +43,7 @@ def copy_extras():
 def build_app():
     pyinstaller_args = [
         "app.py",
+        "--name ActionsetDisplay",
         "--onefile",
         f"--add-data={icon_file};.",
         f"--icon={icon_file}"
