@@ -11,20 +11,11 @@ Hopefully it will be fixed but this is not the first time these have been broken
 
 ## How to use ##
 
-In this testing phase there isn't an .exe so you'll need to have python 3.11 
-installed. Get that from python.org or directly here: 
-[python.org](https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe)
+**CURRENTLY THIS DOES NOT WORK FOR DUALSHOCK CONTROLLERS**
 
-You can modify the `config.toml` file in order to turn on and off notifiers
-and change other settings.
-
-There are two powershell scripts to help setup python for the application
-and launch the application. (Right click - run with powershell).
-
-setup_environment.ps1 is needed once for the initial setup and download of dependencies
-
-launch_application.ps1 should be used to launch the app.
-
+Make sure your controller is connected.
+Modify config.toml to match your game settings and notification preferences.
+Launch ActionsetDisplay.exe before launching the game.
 
 ## Adding a notifier ##
 
