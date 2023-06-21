@@ -9,11 +9,11 @@ class ProcessRunningCheck:
 
         :param exe_list: list of executable names
         """
-        self.exe_list = exe_list
+        self.exe_set = set(exe_list)
         self.process: psutil.Process | None = None
 
     def __repr__(self):
-        return f"{self.__class__.__name__}(game_exes={self.exe_list})"
+        return f"{self.__class__.__name__}(exe_list={list(self.exe_set)})"
 
     def is_running(self) -> bool:
         """
@@ -40,7 +40,7 @@ class ProcessRunningCheck:
 
         # If we don't have the process attempt to reacquire
         for proc in psutil.process_iter(["pid", "name"]):
-            if proc.info['name'].lower() in self.exe_list:
+            if proc.info['name'].lower() in self.exe_set:
                 self.process = proc
                 return True
 
@@ -55,7 +55,6 @@ class ProcessRunningCheck:
         foreground_pids = win32process.GetWindowThreadProcessId(foreground_window)
 
         return self.process.pid in foreground_pids
-
 
 
 def main():
