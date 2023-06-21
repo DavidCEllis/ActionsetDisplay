@@ -15,5 +15,5 @@ property.volume = 1.0  # range of 0.0 to 1.0
 property.rate = 200  # 200 wpm default speech speed
 
 [notifier.toast]
-use_frontend = true
+use_frontend = false
 title = "Action Set Changed"
