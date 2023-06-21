@@ -1,0 +1,19 @@
+# This controls the configuration of the app
+# Default is "BACK". Valid values are
+# "DPAD_UP", "DPAD_DOWN", "DPAD_LEFT", "DPAD_RIGHT"
+# "START", "BACK", "LEFT_THUMB", "RIGHT_THUMB"
+# "LEFT_SHOULDER", "RIGHT_SHOULDER"
+# "A", "B", "X", "Y"
+keypress = "BACK"
+action_sets = ["Default", "Prompt Swap"]
+game_exes = ["darksouls.exe", "darksoulsremastered.exe"] # All lowercase exe files
+
+[notifier]
+[notifier.tts]
+use_frontend = true  # In each case set this to false to switch off the notif method
+property.volume = 1.0  # range of 0.0 to 1.0
+property.rate = 200  # 200 wpm default speech speed
+
+[notifier.toast]
+use_frontend = true
+title = "Action Set Changed"

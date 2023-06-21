@@ -3,23 +3,22 @@ Windows notification output mode using plyer
 """
 
 import plyer
-from pathlib import Path
+from .base import BaseNotifier
+from ..data import icon_file
 
 APP_NAME = "ActionSet Display"
-APP_ICON = Path(__file__).parent / "game-controller.ico"
+APP_ICON = icon_file
 
 
-class ToastNotifier:
-    def __init__(self, *, timeout=1):
-        self.timeout = timeout
+class ToastNotifier(BaseNotifier):
+    FRONTEND_NAME = "toast"
 
     def display(self, message):
         plyer.notification.notify(
-            title="Action Set Changed",
+            title=self.settings['title'],
             message=message,
             app_name=APP_NAME,
-            app_icon=str(APP_ICON),
-            timeout=self.timeout
+            app_icon=str(icon_file)
         )
 
 
@@ -29,7 +28,7 @@ def main():
         title="Test Title",
         message="Test Message",
         app_name=APP_NAME,
-        app_icon=str(APP_ICON),
+        app_icon=str(icon_file),
     )
 
     time.sleep(1)
@@ -38,7 +37,7 @@ def main():
         title="Test Title",
         message="Test Message 2",
         app_name=APP_NAME,
-        app_icon=str(APP_ICON),
+        app_icon=str(icon_file),
     )
 
     time.sleep(1)
@@ -47,7 +46,7 @@ def main():
         title="Test Title",
         message="Test Message 3",
         app_name=APP_NAME,
-        app_icon=str(APP_ICON),
+        app_icon=str(icon_file),
     )
 
 

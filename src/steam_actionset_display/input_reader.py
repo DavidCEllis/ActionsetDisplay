@@ -1,3 +1,4 @@
+# noinspection PyPep8Naming
 import XInput as xinput
 
 FILTERS = {
@@ -18,6 +19,7 @@ FILTERS = {
 }
 
 
+# noinspection PyShadowingBuiltins
 class ButtonHandler(xinput.EventHandler):
     def __init__(
             self,

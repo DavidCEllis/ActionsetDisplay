@@ -7,18 +7,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name="steam_actionset_display"
-description="Backup display for steam controller action sets as they keep breaking"
+description="Backup display for steam controller action sets as they keep breaking it"
 authors = [
   { name="David C Ellis" },
 ]
 readme="README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11"  # Assumes presence of tomlib
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3.11",
     "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
     "Operating System :: Microsoft :: Windows :: Windows 10",
 ]
+dynamic = ['version']
 
 dependencies = [
     "pyttsx3",  # TTS
@@ -29,3 +30,6 @@ dependencies = [
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "steam_actionset_display.__version__"}
