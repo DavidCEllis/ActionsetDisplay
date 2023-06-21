@@ -17,6 +17,9 @@ Make sure your controller is connected.
 Modify config.toml to match your game settings and notification preferences.
 Launch ActionsetDisplay.exe before launching the game.
 
+If you do not see the windows notification prompt you probably have focus assist
+on either when playing games or in full screen mode.
+
 ## Adding a notifier ##
 
 In order to create a new notifier you need to make a new python script in 
