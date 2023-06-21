@@ -13,7 +13,6 @@ from .input_reader import FILTERS, ButtonHandler
 
 
 PACKAGE_NAME = "steam_actionset_display"
-STR_PADDING = 40
 
 
 def make_callback(

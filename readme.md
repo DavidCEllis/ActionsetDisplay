@@ -37,3 +37,11 @@ Then you need to modify `config.toml` to add `[notifier.<your_notifier>]` where
 <your_notifier> is the name of the `.py` file.
 
 Add `use_frontend = true` for it to be used automatically.
+
+
+## Direct Dependencies ##
+
+Controller Inputs: [XInput-Python](https://github.com/Zuzu-Typ/XInput-Python)
+TTS: [pyttsx3](https://github.com/nateshmbhat/pyttsx3)
+Windows Notifications: [plyer](https://github.com/kivy/plyer)
+Process Detection: [psutil](https://github.com/giampaolo/psutil)
