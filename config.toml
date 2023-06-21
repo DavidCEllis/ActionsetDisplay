@@ -10,7 +10,7 @@ game_exes = ["darksouls.exe", "darksoulsremastered.exe"] # All lowercase exe fil
 
 [notifier]
 [notifier.tts]
-use_frontend = true  # In each case set this to false to switch off the notif method
+use_frontend = true  # To turn this off replace with: use_frontend = false
 property.volume = 1.0  # range of 0.0 to 1.0
 property.rate = 200  # 200 wpm default speech speed
 
