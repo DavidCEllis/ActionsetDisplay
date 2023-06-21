@@ -1,4 +1,5 @@
 import psutil
+import win32process, win32gui
 
 
 class ProcessRunningCheck:
@@ -44,6 +45,17 @@ class ProcessRunningCheck:
                 return True
 
         return False
+
+    def has_focus(self):
+        if not self.is_running():
+            return False
+
+        # Get focus window
+        foreground_window = win32gui.GetForegroundWindow()
+        foreground_pids = win32process.GetWindowThreadProcessId(foreground_window)
+
+        return self.process.pid in foreground_pids
+
 
 
 def main():

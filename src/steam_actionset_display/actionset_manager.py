@@ -27,23 +27,23 @@ def make_callback(
     def callback():
         nonlocal actionset_loop
 
-        is_running = game_detector.is_running()
-
-        if not is_running:
+        # If the game has been restarted we need to reset the loop
+        # The first attempt will say it is not running in this case
+        if not game_detector.is_running():
             # Reset the loop
             actionset_loop = itertools.cycle(actionset_list)
             _ = next(actionset_loop)
 
-            is_running = game_detector.is_running()  # Check again
+        # Now check if the game is focused
+        if game_detector.has_focus():
 
-        # This is not the same as an Else as the variable is checked again
-        # On failure in order to reset the loop
-        if is_running:
             message = next(actionset_loop)
 
             print(message)
             for notifier in notifiers:
                 notifier.display(message)
+        elif game_detector.is_running():
+            print("Game is running but not in focus")
         else:
             print("Button pressed but game is not running")
 
