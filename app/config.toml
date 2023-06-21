@@ -18,3 +18,4 @@ property.rate = 200  # 200 wpm default speech speed
 use_frontend = true
 title = "Action Set Manager"
 header = "Action Set Changed"
+mute = true  # Attempt to prevent sound
