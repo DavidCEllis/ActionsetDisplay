@@ -34,7 +34,6 @@ class ToastNotifier(BaseNotifier):
         self.toast.AddImage(self.image)
         self.toast.SetHeadline(self.settings["header"])
 
-
     def display(self, message):
         self.toast.SetFirstLine(message)
         self.toaster.show_toast(self.toast)

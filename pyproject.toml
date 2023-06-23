@@ -27,6 +27,7 @@ dependencies = [
     "XInput-Python",  # Handle Gamepad Input
     "windows-toasts",  # Windows Notifications
     "pywin32",
+    "pyinstaller",
 ]
 
 [tool.setuptools]
