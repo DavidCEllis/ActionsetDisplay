@@ -1,5 +1,7 @@
 # Actionset Display #
 
+**ARCHIVED: It seems they've fixed this now, this will be unarchived if they break it yet again**
+
 In the latest Steam update Valve has managed to completely remove notifications
 when changing controller actionsets.
 
